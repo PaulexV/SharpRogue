@@ -16,5 +16,7 @@ namespace sharpRogue.Core
 
         public static RLColor TextHeading = Palette.DbLight;
 
+        public static RLColor Player = Palette.DbLight;
+
     }
 }
