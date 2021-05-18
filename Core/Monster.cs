@@ -1,6 +1,8 @@
 using System;
+using Behaviors;
 using RLNET;
 using sharpRogue.Core;
+using Systems;
 
 namespace Core
 {
@@ -25,6 +27,13 @@ namespace Core
 
             // Print the monsters name over top of the health bar
             statConsole.Print(2, yPosition, $": {Name}", Palette.DbLight);
+        }
+        public int? TurnsAlerted { get; set; }
+
+        public virtual void PerformAction(CommandSystem commandSystem)
+        {
+            var behavior = new StandardMoveAndAttack();
+            behavior.Act(this, commandSystem);
         }
     }
 }

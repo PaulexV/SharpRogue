@@ -5,7 +5,7 @@ using sharpRogue.Core;
 
 namespace Core
 {
-    public class Actor : IActor, IDrawable
+    public class Actor : IActor, IDrawable, IScheduleable
     {
         // IActor
         private int _attack;
@@ -161,6 +161,14 @@ namespace Core
             {
                 // When not in field-of-view just draw a normal floor
                 console.Set(X, Y, Colors.Floor, Colors.FloorBackground, '.');
+            }
+        }
+        // IScheduleable
+        public int Time
+        {
+            get
+            {
+                return Speed;
             }
         }
     }
