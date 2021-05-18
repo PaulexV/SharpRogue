@@ -9,7 +9,7 @@ namespace Core
         {
             Attack = 2;
             AttackChance = 50;
-            Awareness = 15;
+            Awareness = 10;
             Color = Colors.Player;
             Defense = 2;
             DefenseChance = 40;

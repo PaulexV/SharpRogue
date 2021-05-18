@@ -10,7 +10,7 @@ namespace sharpRogue
     public class Game
     {
         // The screen height and width are in number of tiles
-        private static readonly int _screenWidth = 200;
+        private static readonly int _screenWidth = 180;
         private static readonly int _screenHeight = 110;
 
         private static RLRootConsole _rootConsole;
@@ -84,7 +84,11 @@ namespace sharpRogue
         {
             if (_renderRequired)
             {
-                DungeonMap.Draw(_mapConsole);
+                _mapConsole.Clear();
+                _statConsole.Clear();
+                _messageConsole.Clear();
+
+                DungeonMap.Draw(_mapConsole, _statConsole);
                 Player.Draw(_mapConsole, DungeonMap);
                 Player.DrawStats(_statConsole);
                 MessageLog.Draw(_messageConsole);
