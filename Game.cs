@@ -36,6 +36,8 @@ namespace sharpRogue
         private static RLConsole _inventoryConsole;
         public static Player Player { get; set; }
         public static DungeonMap DungeonMap { get; private set; }
+        public static MessageLog MessageLog { get; private set; }
+
         private static bool _renderRequired = true;
         public static CommandSystem CommandSystem { get; private set; }
         // Singleton of IRandom used throughout the game when generating random numbers
@@ -44,14 +46,8 @@ namespace sharpRogue
         // Event handler for RLNET's Update event
         private static void OnRootConsoleUpdate(object sender, UpdateEventArgs e)
         {
-            _messageConsole.SetBackColor(0, 0, _messageWidth, _messageHeight, Palette.DbDeepWater);
-            _messageConsole.Print(1, 1, "Messages", Colors.TextHeading);
-
-            _statConsole.SetBackColor(0, 0, _statWidth, _statHeight, Palette.DbOldStone);
-            _statConsole.Print(1, 1, "Stats", Colors.TextHeading);
-
-            _inventoryConsole.SetBackColor(0, 0, _inventoryWidth, _inventoryHeight, Palette.DbWood);
-            _inventoryConsole.Print(1, 1, "Inventory", Colors.TextHeading);
+            // _inventoryConsole.SetBackColor(0, 0, _inventoryWidth, _inventoryHeight, Palette.DbWood);
+            // _inventoryConsole.Print(1, 1, "Inventory", Colors.TextHeading);
             bool didPlayerAct = false;
             RLKeyPress keyPress = _rootConsole.Keyboard.GetKeyPress();
 
@@ -90,6 +86,9 @@ namespace sharpRogue
             {
                 DungeonMap.Draw(_mapConsole);
                 Player.Draw(_mapConsole, DungeonMap);
+                Player.DrawStats(_statConsole);
+                MessageLog.Draw(_messageConsole);
+
                 // Blit the sub consoles to the root console in the correct locations
                 RLConsole.Blit(_mapConsole, 0, 0, _mapWidth, _mapHeight,
                   _rootConsole, 0, _inventoryHeight);
@@ -116,6 +115,11 @@ namespace sharpRogue
             // The title will appear at the top of the console window 
             // also include the seed used to generate the level
             string consoleTitle = $"SharpRogue - Level 1 - Seed {seed}";
+
+            // Create a new MessageLog and print the random seed used to generate the level
+            MessageLog = new MessageLog();
+            MessageLog.Add("The rogue arrives on level 1");
+            MessageLog.Add($"Level created with seed '{seed}'");
 
             CommandSystem = new CommandSystem();
             // This must be the exact name of the bitmap font file we are using or it will error.
