@@ -19,5 +19,9 @@ namespace sharpRogue.Core
         public static RLColor Text = Palette.DbLight;
         public static RLColor Gold = Palette.DbSun;
         public static RLColor KoboldColor = Palette.DbBrightWood;
+        public static RLColor DoorBackground = Palette.ComplimentDarkest;
+        public static RLColor Door = Palette.ComplimentLighter;
+        public static RLColor DoorBackgroundFov = Palette.ComplimentDarker;
+        public static RLColor DoorFov = Palette.ComplimentLightest;
     }
 }

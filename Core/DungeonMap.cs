@@ -12,12 +12,13 @@ namespace Core
     {
         public List<Rectangle> Rooms;
         private readonly List<Monster> _monsters;
+        public List<Doors> Doors { get; set; }
         public DungeonMap()
         {
-            // Initialize the list of rooms when we create a new DungeonMap
-            Rooms = new List<Rectangle>();
             // Initialize all the lists when we create a new DungeonMap
+            Rooms = new List<Rectangle>();
             _monsters = new List<Monster>();
+            Doors = new List<Doors>();
         }
         // The Draw method will be called each time the map is updated
         // It will render all of the symbols/colors for each cell to the map sub console
@@ -40,6 +41,10 @@ namespace Core
                     monster.DrawStats(statConsole, i);
                     i++;
                 }
+            }
+            foreach (Doors door in Doors)
+            {
+                door.Draw(mapConsole, this);
             }
         }
 
@@ -114,6 +119,7 @@ namespace Core
                 actor.Y = y;
                 // The new cell the actor is on is now not walkable
                 SetIsWalkable(actor.X, actor.Y, false);
+                OpenDoor(actor, x, y);
                 // Don't forget to update the field of view if we just repositioned the player
                 if (actor is Player)
                 {
@@ -181,6 +187,26 @@ namespace Core
                 }
             }
             return false;
+        }
+        // Return the door at the x,y position or null if one is not found.
+        public Doors GetDoor(int x, int y)
+        {
+            return Doors.SingleOrDefault(d => d.X == x && d.Y == y);
+        }
+
+        // The actor opens the door located at the x,y position
+        private void OpenDoor(Actor actor, int x, int y)
+        {
+            Doors door = GetDoor(x, y);
+            if (door != null && !door.IsOpen)
+            {
+                door.IsOpen = true;
+                var cell = GetCell(x, y);
+                // Once the door is opened it should be marked as transparent and no longer block field-of-view
+                SetCellProperties(x, y, true, cell.IsWalkable, cell.IsExplored);
+
+                Game.MessageLog.Add($"{actor.Name} opened a door");
+            }
         }
     }
 }
