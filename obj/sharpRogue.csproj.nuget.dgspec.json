@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/paulex/Ynov/dev/sharpRogue/sharpRogue.csproj": {}
+    "/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/sharpRogue.csproj": {}
   },
   "projects": {
-    "/home/paulex/Ynov/dev/sharpRogue/sharpRogue.csproj": {
+    "/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/sharpRogue.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/paulex/Ynov/dev/sharpRogue/sharpRogue.csproj",
+        "projectUniqueName": "/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/sharpRogue.csproj",
         "projectName": "sharpRogue",
-        "projectPath": "/home/paulex/Ynov/dev/sharpRogue/sharpRogue.csproj",
+        "projectPath": "/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/sharpRogue.csproj",
         "packagesPath": "/home/paulex/.nuget/packages/",
-        "outputPath": "/home/paulex/Ynov/dev/sharpRogue/obj/",
+        "outputPath": "/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/paulex/.nuget/NuGet/NuGet.Config"
@@ -45,6 +45,10 @@
             "RogueSharp": {
               "target": "Package",
               "version": "[4.2.0, )"
+            },
+            "SuperSimpleTcp": {
+              "target": "Package",
+              "version": "[2.4.0, )"
             },
             "System.Drawing.Common": {
               "target": "Package",

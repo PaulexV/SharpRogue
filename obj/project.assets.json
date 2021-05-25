@@ -302,6 +302,15 @@
           }
         }
       },
+      "SuperSimpleTcp/2.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/SimpleTcp.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/SimpleTcp.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1640,6 +1649,29 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "SuperSimpleTcp/2.4.0": {
+      "sha512": "R/qDlUNKudP3QgbJogEv/KYFsAqNNHHr9vcx5l0664itKPBJ4ghRIatnKFI5INgnvwfcpfoqKx5TjmkCp1c2iA==",
+      "type": "package",
+      "path": "supersimpletcp/2.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "icon.png",
+        "lib/net461/SimpleTcp.dll",
+        "lib/net461/SimpleTcp.xml",
+        "lib/net5.0/SimpleTcp.dll",
+        "lib/net5.0/SimpleTcp.xml",
+        "lib/netcoreapp3.1/SimpleTcp.dll",
+        "lib/netcoreapp3.1/SimpleTcp.xml",
+        "lib/netstandard2.0/SimpleTcp.dll",
+        "lib/netstandard2.0/SimpleTcp.xml",
+        "lib/netstandard2.1/SimpleTcp.dll",
+        "lib/netstandard2.1/SimpleTcp.xml",
+        "supersimpletcp.2.4.0.nupkg.sha512",
+        "supersimpletcp.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -4653,6 +4685,7 @@
     "net5.0": [
       "RLNET >= 1.0.6",
       "RogueSharp >= 4.2.0",
+      "SuperSimpleTcp >= 2.4.0",
       "System.Drawing.Common >= 5.0.2"
     ]
   },
@@ -4662,11 +4695,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/paulex/Ynov/dev/sharpRogue/sharpRogue.csproj",
+      "projectUniqueName": "/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/sharpRogue.csproj",
       "projectName": "sharpRogue",
-      "projectPath": "/home/paulex/Ynov/dev/sharpRogue/sharpRogue.csproj",
+      "projectPath": "/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/sharpRogue.csproj",
       "packagesPath": "/home/paulex/.nuget/packages/",
-      "outputPath": "/home/paulex/Ynov/dev/sharpRogue/obj/",
+      "outputPath": "/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/paulex/.nuget/NuGet/NuGet.Config"
@@ -4700,6 +4733,10 @@
           "RogueSharp": {
             "target": "Package",
             "version": "[4.2.0, )"
+          },
+          "SuperSimpleTcp": {
+            "target": "Package",
+            "version": "[2.4.0, )"
           },
           "System.Drawing.Common": {
             "target": "Package",

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Threading;
 using Core;
 using RLNET;
 using RogueSharp.Random;
+using ServerCommunication;
 using sharpRogue.Core;
 using Systems;
 
@@ -85,7 +87,7 @@ namespace sharpRogue
                             DungeonMap = mapGenerator.CreateMap();
                             MessageLog = new MessageLog();
                             CommandSystem = new CommandSystem();
-                            _rootConsole.Title = $"RougeSharp RLNet Tutorial - Level {_mapLevel}";
+                            _rootConsole.Title = $"SharpRogue - Level {_mapLevel}";
                             didPlayerAct = true;
                         }
                     }
@@ -133,15 +135,59 @@ namespace sharpRogue
             }
             _renderRequired = true;
         }
+
+        static void StartServer()
+        {
+            string myIPAddress = "192.168.1.79";
+            int port = 3000;
+
+            Client client = new Client(myIPAddress, port);
+
+            client.ConnectToServer();
+            Console.WriteLine("Connected to server.");
+
+            Thread.Sleep(1000);
+            Console.Clear();
+
+            client.ServerData();
+
+            try
+            {
+                string messageToServer = "";
+
+                while (client.clientStatus)
+                {
+                    messageToServer = Console.ReadLine();
+
+                    if (messageToServer == "start game")
+                    {
+                        client.clientStatus = false;
+                        client.streamWriter.Flush();
+                    }
+                    if (messageToServer != "start game")
+                    {
+                        client.streamWriter.WriteLine(messageToServer);
+                        client.streamWriter.Flush();
+                    }
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Problem reading from server");
+            }
+            client.Disconnect();
+        }
         public static void Main()
         {
+            StartServer();
+
             // Establish the seed for the random number generator from the current time
             int seed = (int)DateTime.UtcNow.Ticks;
             Random = new DotNetRandom(seed);
 
             // The title will appear at the top of the console window 
             // also include the seed used to generate the level
-            string consoleTitle = $"RougeSharp V3 Tutorial - Level {_mapLevel} - Seed {seed}"; ;
+            string consoleTitle = $"RogueSharp - Level {_mapLevel} - Seed {seed}"; ;
 
             // Create a new MessageLog and print the random seed used to generate the level
             MessageLog = new MessageLog();
