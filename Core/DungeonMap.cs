@@ -13,8 +13,11 @@ namespace Core
         public List<Rectangle> Rooms;
         private readonly List<Monster> _monsters;
         public List<Doors> Doors { get; set; }
+        public Stairs StairsUp { get; set; }
+        public Stairs StairsDown { get; set; }
         public DungeonMap()
         {
+            Game.SchedulingSystem.Clear();
             // Initialize all the lists when we create a new DungeonMap
             Rooms = new List<Rectangle>();
             _monsters = new List<Monster>();
@@ -46,6 +49,8 @@ namespace Core
             {
                 door.Draw(mapConsole, this);
             }
+            StairsUp.Draw(mapConsole, this);
+            StairsDown.Draw(mapConsole, this);
         }
 
         private void SetConsoleSymbolForCell(RLConsole console, Cell cell)
@@ -207,6 +212,11 @@ namespace Core
 
                 Game.MessageLog.Add($"{actor.Name} opened a door");
             }
+        }
+        public bool CanMoveDownToNextLevel()
+        {
+            Player player = Game.Player;
+            return StairsDown.X == player.X && StairsDown.Y == player.Y;
         }
     }
 }

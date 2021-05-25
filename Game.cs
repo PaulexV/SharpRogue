@@ -43,6 +43,7 @@ namespace sharpRogue
         public static CommandSystem CommandSystem { get; private set; }
         // Singleton of IRandom used throughout the game when generating random numbers
         public static IRandom Random { get; private set; }
+        private static int _mapLevel = 1;
 
         // Event handler for RLNET's Update event
         private static void OnRootConsoleUpdate(object sender, UpdateEventArgs e)
@@ -76,8 +77,19 @@ namespace sharpRogue
                     {
                         _rootConsole.Close();
                     }
+                    else if (keyPress.Key == RLKey.Period)
+                    {
+                        if (DungeonMap.CanMoveDownToNextLevel())
+                        {
+                            MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 20, 13, 7, ++_mapLevel);
+                            DungeonMap = mapGenerator.CreateMap();
+                            MessageLog = new MessageLog();
+                            CommandSystem = new CommandSystem();
+                            _rootConsole.Title = $"RougeSharp RLNet Tutorial - Level {_mapLevel}";
+                            didPlayerAct = true;
+                        }
+                    }
                 }
-
                 if (didPlayerAct)
                 {
                     _renderRequired = true;
@@ -129,11 +141,11 @@ namespace sharpRogue
 
             // The title will appear at the top of the console window 
             // also include the seed used to generate the level
-            string consoleTitle = $"SharpRogue - Level 1 - Seed {seed}";
+            string consoleTitle = $"RougeSharp V3 Tutorial - Level {_mapLevel} - Seed {seed}"; ;
 
             // Create a new MessageLog and print the random seed used to generate the level
             MessageLog = new MessageLog();
-            MessageLog.Add("The rogue arrives on level 1");
+            MessageLog.Add($"The rogue arrives on level '{_mapLevel}'");
             MessageLog.Add($"Level created with seed '{seed}'");
 
             CommandSystem = new CommandSystem();
@@ -152,7 +164,7 @@ namespace sharpRogue
             // Set up a handler for RLNET's Render event
             _rootConsole.Render += OnRootConsoleRender;
             // Begin RLNET's game loop
-            MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 20, 25, 8);
+            MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 20, 25, 8, _mapLevel);
             DungeonMap = mapGenerator.CreateMap();
             DungeonMap.UpdatePlayerFieldOfView();
             _rootConsole.Run();
