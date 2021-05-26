@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Data;
 using System.Threading;
 using Core;
+using Database;
+using MySql.Data.MySqlClient;
 using RLNET;
 using RogueSharp.Random;
 using ServerCommunication;
@@ -177,9 +180,43 @@ namespace sharpRogue
             }
             client.Disconnect();
         }
+        static void LastPlayed()
+        {
+            // Étabilissez de la connexion à la base de données. 
+            MySqlConnection connection = DBUtils.GetDBConnection();
+            connection.Open();
+            try
+            {
+                // La commande Insert.
+                string sql = "INSERT INTO sharpRogue.GameInfo(SELECT CURDATE());";
+
+                MySqlCommand cmd = null;
+                cmd = new MySqlCommand(sql, connection);
+
+                // Exécutez la Commande (Utilisez pour supprimer, insérer, mettre à jour).
+                int rowCount = cmd.ExecuteNonQuery();
+
+                Console.WriteLine("Row Count affected = " + rowCount);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                Console.WriteLine(e.StackTrace);
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                connection = null;
+            }
+            Console.Read();
+        }
+
+
         public static void Main()
         {
             StartServer();
+            LastPlayed();
 
             // Establish the seed for the random number generator from the current time
             int seed = (int)DateTime.UtcNow.Ticks;

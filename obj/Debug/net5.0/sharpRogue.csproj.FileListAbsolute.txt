@@ -35,7 +35,6 @@
 /home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/OpenTK.dll
 /home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/RLNET.dll
 /home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/RogueSharp.dll
-/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/SimpleTcp.dll
 /home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/System.Drawing.Common.dll
 /home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
 /home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
@@ -50,3 +49,17 @@
 /home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/obj/Debug/net5.0/ref/sharpRogue.dll
 /home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/obj/Debug/net5.0/sharpRogue.pdb
 /home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/obj/Debug/net5.0/sharpRogue.genruntimeconfig.cache
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/BouncyCastle.Crypto.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/Google.Protobuf.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/K4os.Compression.LZ4.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/K4os.Compression.LZ4.Streams.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/K4os.Hash.xxHash.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/MySql.Data.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/Ubiety.Dns.Core.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/Zstandard.Net.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/System.Security.Permissions.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/System.Windows.Extensions.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/home/paulex/Ynov/dev/SharpRogueGame/sharpRogue/bin/Debug/net5.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll

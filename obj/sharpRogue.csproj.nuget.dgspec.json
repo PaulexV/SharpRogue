@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.25, )"
+            },
             "RLNET": {
               "target": "Package",
               "version": "[1.0.6, )"
@@ -45,10 +49,6 @@
             "RogueSharp": {
               "target": "Package",
               "version": "[4.2.0, )"
-            },
-            "SuperSimpleTcp": {
-              "target": "Package",
-              "version": "[2.4.0, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
