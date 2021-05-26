@@ -182,18 +182,18 @@ namespace sharpRogue
         }
         static void LastPlayed()
         {
-            // Étabilissez de la connexion à la base de données. 
+            // Connect to database 
             MySqlConnection connection = DBUtils.GetDBConnection();
             connection.Open();
             try
             {
-                // La commande Insert.
+                //Insert
                 string sql = "INSERT INTO sharpRogue.GameInfo(SELECT CURDATE());";
 
                 MySqlCommand cmd = null;
                 cmd = new MySqlCommand(sql, connection);
 
-                // Exécutez la Commande (Utilisez pour supprimer, insérer, mettre à jour).
+                // Execute the query
                 int rowCount = cmd.ExecuteNonQuery();
 
                 Console.WriteLine("Row Count affected = " + rowCount);
@@ -247,7 +247,7 @@ namespace sharpRogue
             // Set up a handler for RLNET's Render event
             _rootConsole.Render += OnRootConsoleRender;
             // Begin RLNET's game loop
-            MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 20, 25, 8, _mapLevel);
+            MapGenerator mapGenerator = new MapGenerator(_mapWidth, _mapHeight, 20, 15, 8, _mapLevel);
             DungeonMap = mapGenerator.CreateMap();
             DungeonMap.UpdatePlayerFieldOfView();
             _rootConsole.Run();
