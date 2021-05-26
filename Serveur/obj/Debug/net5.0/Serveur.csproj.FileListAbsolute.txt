@@ -1,0 +1,16 @@
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/bin/Debug/net5.0/Serveur
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/bin/Debug/net5.0/Serveur.deps.json
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/bin/Debug/net5.0/Serveur.runtimeconfig.json
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/bin/Debug/net5.0/Serveur.runtimeconfig.dev.json
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/bin/Debug/net5.0/Serveur.dll
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/bin/Debug/net5.0/ref/Serveur.dll
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/bin/Debug/net5.0/Serveur.pdb
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/obj/Debug/net5.0/Serveur.csprojAssemblyReference.cache
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/obj/Debug/net5.0/Serveur.GeneratedMSBuildEditorConfig.editorconfig
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/obj/Debug/net5.0/Serveur.AssemblyInfoInputs.cache
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/obj/Debug/net5.0/Serveur.AssemblyInfo.cs
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/obj/Debug/net5.0/Serveur.csproj.CoreCompileInputs.cache
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/obj/Debug/net5.0/Serveur.dll
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/obj/Debug/net5.0/ref/Serveur.dll
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/obj/Debug/net5.0/Serveur.pdb
+/home/paulex/Ynov/dev/SharpRogueGame/Serveur/obj/Debug/net5.0/Serveur.genruntimeconfig.cache
